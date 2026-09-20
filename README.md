@@ -29,7 +29,7 @@ auditable workflow:
 No build step is required.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/openbms-designer.git
+git clone https://github.com/t4p8cvydv5-ops/openbms-designer.git
 cd openbms-designer
 npm test
 npm start
