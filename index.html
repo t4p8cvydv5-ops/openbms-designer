@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Open-source, vendor-neutral BMS architecture sizing tool."
+    />
+    <title>OpenBMS Designer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">OpenBMS <span>Designer</span></a>
+      <a class="github-link" href="https://github.com/YOUR-USERNAME/openbms-designer">GitHub</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Open-source building automation engineering</p>
+        <h1>Size a BMS architecture from your point list.</h1>
+        <p>
+          Enter your I/O and field-device counts. The early-stage sizing engine
+          produces a transparent capacity check, bill of materials and architecture overview.
+        </p>
+      </section>
+
+      <div class="workspace">
+        <section class="panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Project inputs</p>
+              <h2>Point list</h2>
+            </div>
+            <button class="text-button" id="load-example" type="button">Load example</button>
+          </div>
+
+          <form id="sizing-form">
+            <div class="field-grid">
+              <label>Digital inputs <input name="di" type="number" min="0" step="1" value="0" /></label>
+              <label>Digital outputs <input name="do" type="number" min="0" step="1" value="0" /></label>
+              <label>Analogue inputs <input name="ai" type="number" min="0" step="1" value="0" /></label>
+              <label>Analogue outputs <input name="ao" type="number" min="0" step="1" value="0" /></label>
+              <label>Modbus devices <input name="modbus" type="number" min="0" step="1" value="0" /></label>
+              <label>BACnet devices <input name="bacnet" type="number" min="0" step="1" value="0" /></label>
+            </div>
+
+            <label class="reserve-field">
+              Design reserve
+              <span><input name="reservePercent" type="number" min="0" max="100" step="1" value="20" />%</span>
+            </label>
+
+            <div class="import-row">
+              <label class="file-button" for="csv-file">Import CSV</label>
+              <input id="csv-file" type="file" accept=".csv,text/csv" />
+              <span id="file-label">name,type,quantity</span>
+            </div>
+
+            <button class="primary-button" type="submit">Calculate architecture</button>
+          </form>
+          <p id="error" class="error" role="alert" hidden></p>
+        </section>
+
+        <section id="results" class="panel results-panel" aria-live="polite" hidden></section>
+      </div>
+
+      <p class="disclaimer">
+        Prototype only. Verify product compatibility, network limits and engineering rules before use.
+      </p>
+    </main>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
