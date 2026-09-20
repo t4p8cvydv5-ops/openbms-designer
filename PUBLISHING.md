@@ -17,7 +17,7 @@ Depuis le dossier du projet :
 git init -b main
 git add .
 git commit -m "feat: bootstrap OpenBMS Designer MVP"
-git remote add origin https://github.com/YOUR-USERNAME/openbms-designer.git
+git remote add origin https://github.com/t4p8cvydv5-ops/openbms-designer.git
 git push -u origin main
 ```
 
